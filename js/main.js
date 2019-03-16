@@ -355,7 +355,7 @@ function checkWinner() {
                 onStartFight();
             } else {
 
-                resetAll(3)
+                resetAll(3);
                 onFightMenu();
             }
         });
