@@ -345,7 +345,7 @@ function onBtnGiveUp() {
 
 function checkWinner() {
 
-    if (monsterHealth <= 0) {
+    if (monsterHealth === 0) {
         
         Swal.fire({
             title: 'You won!',
@@ -371,7 +371,7 @@ function checkWinner() {
         });
         return true;
     }
-    else if (playerHealth <= 0) {
+    else if (playerHealth === 0) {
         
         Swal.fire({
             title: 'You lost!',
