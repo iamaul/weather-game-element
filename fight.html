@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous"
+    >
+
+    <!-- FontAwesome -->
+    <link 
+        rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+        crossorigin="anonymous"
+    >
+
+    <!-- Animated CSS -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    >
+
+    <!-- Notifications CSS -->
+    <link
+        rel="stylesheet"
+        href="css/notifications.css"
+        type="text/css"
+    />
+
+</head>
+<body onload="onFightMenu();">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary mb-4">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                <i class="fas fa-gavel"></i> <b>Fights</b>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="btn-group btn-group-lg float-right">
+                    <button class="button btn btn-info" onclick="saveHP();">Save</button>
+                    <button class="button btn btn-primary" onclick="loadHP();">Load</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div id="nick"></div>
+                    <div class="card-body">
+                        <div class="progress">
+                            <div 
+                                id="playerHP"
+                                class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+                                role="progressbar"
+                                style="width: 0%;"  
+                                aria-valuenow="0" 
+                                aria-valuemin="0" 
+                                aria-valuemax="0"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div id="monster" class="card-header">Monster</div>
+                    <div class="card-body">
+                        <div class="progress">
+                            <div 
+                                id="monsterHP"
+                                class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+                                role="progressbar"
+                                style="width: 0%;"  
+                                aria-valuenow="0" 
+                                aria-valuemin="0" 
+                                aria-valuemax="0"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button 
+            id="startFight" 
+            class="button btn btn-outline-secondary btn-block"
+            onclick="onStartFight();" 
+        >
+            Start Fight
+        </button> 
+        <center>
+            <div class="btn-group btn-group-lg col-md-5">
+                <button 
+                    id="attack" 
+                    class="button btn btn-danger"
+                    onclick="onBtnAttack();"
+                >
+                    Attack
+                </button>
+                <button 
+                    id="specialAttack" 
+                    class="button btn btn-warning"
+                    onclick="onBtnSpecialAttack();"
+                >
+                    Special Attack
+                </button>
+                <button 
+                    id="giveUp" 
+                    class="button btn btn-secondary"
+                    onclick="onBtnGiveUp();"
+                >
+                    Give Up
+                </button>
+            </div>
+        </center>
+    </div>
+
+    <!-- Bootstrap -->
+    <script 
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+        crossorigin="anonymous">
+    </script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    
+    <!-- main script -->
+    <script src="js/main.js"></script>
+    <script src="js/notifications.js"></script>
+    
+</body>
+</html>
