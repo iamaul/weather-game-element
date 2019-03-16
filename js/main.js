@@ -152,6 +152,21 @@ function attackRange(range1, range2) {
     localStorage.setItem("damages", JSON.stringify(attackDamage));
 }
 
+function onHealthChange() {
+
+    $('#playerHP')
+        .css("width", playerHealth + "%")
+        .attr("aria-valuenow", playerHealth)
+        .attr("aria-valuemax", playerHealth)
+        .text(playerHealth + "%");
+
+    $('#monsterHP')
+        .css("width", monsterHealth + "%")
+        .attr("aria-valuenow", monsterHealth)
+        .attr("aria-valuemax", monsterHealth)
+        .text(monsterHealth + "%");
+}
+
 function onFightMenu() {
 
     if (!startFight) {
@@ -174,17 +189,7 @@ function onFightMenu() {
 
         document.getElementById('nick').innerHTML = `<div class="card-header">${nickname}</div>`;
 
-        $('#playerHP')
-            .css("width", playerHealth + "%")
-            .attr("aria-valuenow", playerHealth)
-            .attr("aria-valuemax", playerHealth)
-            .text(playerHealth + "%");
-
-        $('#monsterHP')
-            .css("width", monsterHealth + "%")
-            .attr("aria-valuenow", monsterHealth)
-            .attr("aria-valuemax", monsterHealth)
-            .text(monsterHealth + "%");
+        onHealthChange();
     }
 }
 
@@ -203,21 +208,6 @@ function onStartFight() {
     btnAttack.style.visibility = 'visible';
     btnSpecialAttack.style.visibility = 'visible';
     btnGiveUp.style.visibility = 'visible';
-}
-
-function onHealthChange() {
-
-    $('#playerHP')
-        .css("width", playerHealth + "%")
-        .attr("aria-valuenow", playerHealth)
-        .attr("aria-valuemax", playerHealth)
-        .text(playerHealth + "%");
-
-    $('#monsterHP')
-        .css("width", monsterHealth + "%")
-        .attr("aria-valuenow", monsterHealth)
-        .attr("aria-valuemax", monsterHealth)
-        .text(monsterHealth + "%");
 }
 
 function getPlayerDamages(damages) {
