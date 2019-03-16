@@ -448,7 +448,7 @@ function saveHP() {
             imageUrl: 'https://discordapp.com/assets/d049def26c077694f4f184be88cea9bb.svg',
             imageHeight: 100,
             title: 'Save',
-            text: 'Your and Monster health has been saved',
+            text: 'The Player and Monster health has been saved',
             showConfirmButton: false,
             timer: 3000
         }).then(function() {
@@ -467,7 +467,7 @@ function loadHP() {
             imageUrl: 'https://discordapp.com/assets/d049def26c077694f4f184be88cea9bb.svg',
             imageHeight: 100,
             title: 'Load',
-            text: 'Your and Monster health has been loaded',
+            text: 'The Player and Monster health has been loaded',
             showConfirmButton: false,
             timer: 3000
         }).then(function() {
